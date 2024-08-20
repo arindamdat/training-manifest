@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitops-application
+  namespace: arindam
+  labels:
+    app: gitops-application
+spec:
+  type: ClusterIP
+  selector:
+    app: gitops-application
+  ports: 
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: http
